@@ -33,12 +33,12 @@ stopAfterSteps n msg = do
 -- ...
 -- not (not (not (not (not ...
 
-shaveReport :: State Int Bool
-shaveReport = do
-    shavesHimself Customer
-    shavesHimself SelfShaver
-    shavesHimself Barber
+askWhether :: Num s => t -> (t -> State s a) -> a
+askWhether a b = fst $ runState (b a) 0
 
 main :: IO ()
-main = print $ runState shaveReport 0
+main = print
+    ( askWhether Customer shavesHimself 
+    , askWhether SelfShaver shavesHimself 
+    , askWhether Barber shavesHimself )
 
