@@ -20,7 +20,7 @@ shavesHimself Barber     = barberShaves Barber
 stopAfterSteps :: Int -> String -> State Int ()
 stopAfterSteps n msg = do
     a <- get
-    if (a > n)
+    if a > n
         then error msg
         else put (succ a)
 
