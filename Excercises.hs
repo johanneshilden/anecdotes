@@ -63,7 +63,7 @@ primes = 2 : [p | p <- [3..], isPrime p]
 --
 --               ...
 --
---        13 | 221 -> True   ... At this point we terminate and return True.
+--        13 | 221 -> True   ... At this point we terminate and return False.
 --
 --        
 -- Let's try 17 instead:
