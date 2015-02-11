@@ -89,9 +89,9 @@ isPrime 0 = False
 isPrime 1 = False
 isPrime 2 = True
 isPrime 3 = True
-isPrime q = and [rem q n /= 0 | n <- takeWhile pred $ primes]
+isPrime q = and [rem q n /= 0 | n <- takeWhile upToSqr primes]
   where
-    pred x = x^2 <= q
+    upToSqr x = x^2 <= q
 
 -- | List all primes [2 .. max]. Not as efficient as a straight-up imperative 
 -- sieve using a mutable data structure, but more readable.
