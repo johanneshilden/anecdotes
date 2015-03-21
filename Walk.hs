@@ -61,5 +61,5 @@ tests = w "abcfde"
     w = walk graph
 
 main :: IO ()
-main = print $ length $ filter (\x -> walk graph x) $ permutations "abcdef"
+main = print $ length $ filter (walk graph) $ permutations "abcdef"
 
