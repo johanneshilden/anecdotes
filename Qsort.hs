@@ -1,7 +1,7 @@
 module Main where
 
 -- | Split a list into two based on whether the elements satisfy the given
---   predicate.
+--   predicate or not.
 splip :: (a -> Bool) -> [a] -> ([a], [a])
 splip pr xs = foldr fn ([], []) xs
   where
